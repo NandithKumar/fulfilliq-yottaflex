@@ -1,0 +1,260 @@
+{
+  "project": "FulfillIQ",
+  "seed": 20261022,
+  "database_validation": {
+    "passed": true,
+    "check_count": 30,
+    "passed_checks": 30,
+    "failed_checks": [],
+    "checks": [
+      {
+        "name": "foreign_key_integrity",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "duplicate_order_ids",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "duplicate_line_ids",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "duplicate_shipment_ids",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "duplicate_tracking_ids",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "invalid_line_totals",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "invalid_inventory_balance",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "invalid_capacity_balance",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "shipment_unit_reconciliation",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "shipment_line_order_consistency",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "line_allocation_not_overordered",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "inventory_reservation_reconciliation",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "capacity_reservation_reconciliation",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "promise_not_before_order",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "promise_latest_child_shipment",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "tracking_sequence_chronology",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "tracking_not_after_snapshot",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "dispatch_not_after_snapshot",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "pickup_not_before_dispatch",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "shipment_dispatch_state_alignment",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "order_rollup_all_children",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "order_event_final_state",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "order_event_timestamp_chronology",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "backorder_has_no_shipment",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "missing_order_promise",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "tracking_event_target",
+        "passed": true,
+        "observed": 500,
+        "expected": 500,
+        "detail": ""
+      },
+      {
+        "name": "order_target",
+        "passed": true,
+        "observed": 250,
+        "expected": 250,
+        "detail": ""
+      },
+      {
+        "name": "unsupported_carrier_used",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "negative_quantities",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      },
+      {
+        "name": "duplicate_tracking_sequence",
+        "passed": true,
+        "observed": 0,
+        "expected": 0,
+        "detail": ""
+      }
+    ],
+    "counts": {
+      "orders": 250,
+      "order_lines": 514,
+      "nodes": 20,
+      "carriers": 10,
+      "skus": 500,
+      "shipments": 250,
+      "tracking_events": 500,
+      "delivery_promises": 250,
+      "split_orders": 8,
+      "backorders": 8
+    },
+    "order_status": {
+      "BACKORDERED": 8,
+      "DELIVERED": 179,
+      "DELIVERED_LATE": 25,
+      "IN_TRANSIT": 28,
+      "READY_TO_SHIP": 10
+    }
+  },
+  "ground_truth_validation": {
+    "passed": true,
+    "expected_cases": [
+      "ALLOCATION_EXCEEDS_STOCK",
+      "DELIVERED_BEFORE_DISPATCH",
+      "PROMISE_BEFORE_ORDER",
+      "SPLIT_STATUS_NOT_ROLLED_UP",
+      "UNSUPPORTED_CARRIER_SERVICE_ZONE"
+    ],
+    "observed_cases": [
+      "ALLOCATION_EXCEEDS_STOCK",
+      "DELIVERED_BEFORE_DISPATCH",
+      "PROMISE_BEFORE_ORDER",
+      "SPLIT_STATUS_NOT_ROLLED_UP",
+      "UNSUPPORTED_CARRIER_SERVICE_ZONE"
+    ],
+    "case_count": 5
+  },
+  "overall_passed": true
+}

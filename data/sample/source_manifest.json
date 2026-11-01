@@ -1,0 +1,36 @@
+{
+  "project": "FulfillIQ",
+  "engine_version": "1.0.0",
+  "seed": 20261022,
+  "snapshot_at": "2026-11-01T12:00:00+05:30",
+  "scale": {
+    "orders": 250,
+    "nodes": 20,
+    "carriers": 10,
+    "skus": 500,
+    "tracking_events": 500,
+    "order_lines": 514,
+    "shipments": 250
+  },
+  "generator": "python -m fulfilliq.cli generate",
+  "synthetic_only": true,
+  "provenance": "All data is synthetic and generated locally. No customer or third-party records are used.",
+  "notes": [
+    "Baseline tables contain valid domain records.",
+    "Intentional negative examples exist only in ground_truth.json/csv.",
+    "Tracking-event target is exact; extra evidence milestones are attached only to delivered shipments when capacity exceptions reduce shipment count."
+  ],
+  "allocation_summary": {
+    "single_node": 234,
+    "split": 8,
+    "backordered": 8,
+    "capacity_blocked": 0,
+    "carrier_unavailable": 0
+  },
+  "validation": {
+    "overall_passed": true,
+    "database_checks_passed": 30,
+    "database_check_count": 30,
+    "ground_truth_cases_passed": 5
+  }
+}

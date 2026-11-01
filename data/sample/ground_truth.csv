@@ -1,0 +1,6 @@
+case_id,issue_type,entity_type,entity_id,expected_detection,expected_decision
+ANOM-001,PROMISE_BEFORE_ORDER,delivery_promise,PROM-ANOM-001,promise.promised_delivery_date < order.order_ts.date,REJECT_PROMISE_AND_RECOMPUTE
+ANOM-002,ALLOCATION_EXCEEDS_STOCK,shipment_line,SHP-ANOM-002,allocated_quantity > inventory.available_before_reservation,BLOCK_ALLOCATION
+ANOM-003,UNSUPPORTED_CARRIER_SERVICE_ZONE,shipment,SHP-ANOM-003,carrier_service_zone.supported = 0,RESELECT_CARRIER_OR_ESCALATE
+ANOM-004,DELIVERED_BEFORE_DISPATCH,tracking_event,TRK-SHP-ANOM-004-002,DELIVERED.event_ts < PICKED_UP.event_ts,QUARANTINE_TIMELINE_AND_INVESTIGATE
+ANOM-005,SPLIT_STATUS_NOT_ROLLED_UP,orders,ORD-ANOM-005,order.status = DELIVERED while a child shipment is IN_TRANSIT,DERIVE_ORDER_STATUS_FROM_ALL_SHIPMENTS

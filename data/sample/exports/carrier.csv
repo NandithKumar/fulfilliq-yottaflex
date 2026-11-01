@@ -1,0 +1,11 @@
+carrier_id,name,cutoff_time,operating_days,on_time_rate,base_cost,handling_hours
+CAR-001,AsterShip,15:00,"0,1,2,3,4,5",0.88,36.0,2
+CAR-002,BlueDart Synthetic,16:30,"0,1,2,3,4,5",0.898,44.5,3
+CAR-003,ParcelNova,17:00,"0,1,2,3,4,5",0.916,53.0,4
+CAR-004,RapidRoute,18:30,"0,1,2,3,4,5",0.934,61.5,5
+CAR-005,NorthStar Logistics,15:00,"0,1,2,3,4,5",0.952,70.0,6
+CAR-006,SwiftCart,16:30,"0,1,2,3,4,5",0.97,36.0,2
+CAR-007,Orbit Express,17:00,"0,1,2,3,4,5",0.88,44.5,3
+CAR-008,Pioneer Freight,18:30,"0,1,2,3,4,5",0.898,53.0,4
+CAR-009,MetroParcel,15:00,"0,1,2,3,4,5",0.916,61.5,5
+CAR-010,CloudLane,16:30,"0,1,2,3,4,5",0.934,70.0,6

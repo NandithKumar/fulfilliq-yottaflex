@@ -1,0 +1,5 @@
+service_level_id,name,min_transit_days,max_transit_days,priority_rank
+SVC-STD,STANDARD,3,5,3
+SVC-EXP,EXPRESS,1,2,2
+SVC-ECO,ECONOMY,4,7,4
+SVC-PRI,PRIORITY,1,1,1

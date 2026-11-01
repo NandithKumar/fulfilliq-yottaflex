@@ -1,0 +1,76 @@
+{
+  "description": "Deliberate negative scenarios are separate from baseline input data; do not train on or ingest these as operational facts.",
+  "seed": 20261022,
+  "baseline_order_reference": "ORD-2026-000001",
+  "baseline_shipment_count": 250,
+  "cases": [
+    {
+      "case_id": "ANOM-001",
+      "issue_type": "PROMISE_BEFORE_ORDER",
+      "entity_type": "delivery_promise",
+      "entity_id": "PROM-ANOM-001",
+      "expected_detection": "promise.promised_delivery_date < order.order_ts.date",
+      "expected_decision": "REJECT_PROMISE_AND_RECOMPUTE"
+    },
+    {
+      "case_id": "ANOM-002",
+      "issue_type": "ALLOCATION_EXCEEDS_STOCK",
+      "entity_type": "shipment_line",
+      "entity_id": "SHP-ANOM-002",
+      "expected_detection": "allocated_quantity > inventory.available_before_reservation",
+      "expected_decision": "BLOCK_ALLOCATION"
+    },
+    {
+      "case_id": "ANOM-003",
+      "issue_type": "UNSUPPORTED_CARRIER_SERVICE_ZONE",
+      "entity_type": "shipment",
+      "entity_id": "SHP-ANOM-003",
+      "expected_detection": "carrier_service_zone.supported = 0",
+      "expected_decision": "RESELECT_CARRIER_OR_ESCALATE"
+    },
+    {
+      "case_id": "ANOM-004",
+      "issue_type": "DELIVERED_BEFORE_DISPATCH",
+      "entity_type": "tracking_event",
+      "entity_id": "TRK-SHP-ANOM-004-002",
+      "expected_detection": "DELIVERED.event_ts < PICKED_UP.event_ts",
+      "expected_decision": "QUARANTINE_TIMELINE_AND_INVESTIGATE"
+    },
+    {
+      "case_id": "ANOM-005",
+      "issue_type": "SPLIT_STATUS_NOT_ROLLED_UP",
+      "entity_type": "orders",
+      "entity_id": "ORD-ANOM-005",
+      "expected_detection": "order.status = DELIVERED while a child shipment is IN_TRANSIT",
+      "expected_decision": "DERIVE_ORDER_STATUS_FROM_ALL_SHIPMENTS"
+    }
+  ],
+  "examples": {
+    "ANOM-001": {
+      "order_ts": "2026-10-20T10:00:00+05:30",
+      "promised_delivery_date": "2026-10-19"
+    },
+    "ANOM-002": {
+      "sku_id": "SKU-000099",
+      "available_before_reservation": 2,
+      "allocated_quantity": 5
+    },
+    "ANOM-003": {
+      "carrier_id": "CAR-010",
+      "service_level_id": "SVC-PRI",
+      "zone": "EAST",
+      "supported": 0
+    },
+    "ANOM-004": {
+      "picked_up_ts": "2026-10-22T12:00:00+05:30",
+      "delivered_ts": "2026-10-21T18:00:00+05:30"
+    },
+    "ANOM-005": {
+      "order_status": "DELIVERED",
+      "shipment_statuses": [
+        "DELIVERED",
+        "IN_TRANSIT"
+      ]
+    }
+  }
+}
