@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#09111f" />
+  <meta name="description" content="FulfillIQ is a deterministic, explainable fulfillment allocation and promise simulation control tower." />
+  <title>FulfillIQ | Network Control Tower</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-lockup">
+        <div class="brand-mark"><span>F</span><i></i></div>
+        <div><div class="brand-name">fulfill<span>iq</span></div><div class="brand-sub">NETWORK INTELLIGENCE</div></div>
+      </div>
+      <div class="workspace-label">WORKSPACE</div>
+      <div class="workspace-switch"><div class="workspace-glyph">N</div><div class="workspace-copy"><strong>Northstar Retail</strong><small>India network · Synthetic</small></div><span class="chevron">⌄</span></div>
+      <div class="nav-label">OPERATIONS</div>
+      <nav class="main-nav">
+        <button class="nav-item active" data-page="overview"><span class="nav-icon">◫</span><span>Control tower</span><kbd>01</kbd></button>
+        <button class="nav-item" data-page="orders"><span class="nav-icon">▤</span><span>Order command</span><kbd>02</kbd></button>
+        <button class="nav-item" data-page="allocation"><span class="nav-icon">⌘</span><span>Allocation lab</span><kbd>03</kbd></button>
+        <button class="nav-item" data-page="network"><span class="nav-icon">⌖</span><span>Network health</span><kbd>04</kbd></button>
+        <button class="nav-item" data-page="quality"><span class="nav-icon">◉</span><span>Data assurance</span><kbd>05</kbd></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="system-card"><div class="system-top"><span class="pulse-dot"></span><span>SYSTEM OPERATIONAL</span></div><div class="system-line"><span>Decision engine</span><b>v1.0.0</b></div><div class="system-line"><span>Data mode</span><b>Deterministic</b></div><div class="system-track"><i></i></div><small>Local runtime · No external APIs</small></div>
+        <div class="profile"><div class="avatar">NK</div><div class="profile-copy"><strong>Network analyst</strong><small>Candidate workspace</small></div><span class="more">•••</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>FULFILLMENT</span><b>/</b><strong id="crumb">CONTROL TOWER</strong></div>
+        <div class="topbar-actions"><div class="snapshot"><span class="snapshot-dot"></span><span>SIMULATION SNAPSHOT</span><b id="snapshot-date">NOV 01, 2026</b></div><button class="icon-button" id="refresh-btn" title="Refresh data">↻</button><div class="top-avatar">NK</div></div>
+      </header>
+      <div class="page-wrap">
+        <div class="page-heading"><div><div class="eyebrow" id="eyebrow">NETWORK OVERVIEW <span>•</span> 45-DAY WINDOW</div><h1 id="page-title">Control tower<span class="heading-period">.</span></h1><p id="page-subtitle">A single view of inventory, capacity, carrier execution and delivery promises.</p></div><div class="heading-right"><div class="data-badge"><span class="tiny-dot"></span> SYNTHETIC LIVE DATA</div><div class="updated-label">Last synced <strong id="sync-time">just now</strong></div></div></div>
+        <div id="content" class="content-area"><div class="loading-state"><div class="loader"></div><span>Connecting to the fulfillment network…</span></div></div>
+        <footer class="footer"><span>FULFILLIQ <b>·</b> DECISION SYSTEMS</span><span>Built for clarity, traceability & operational trust <i>✳</i></span><span>LOCAL SIMULATION <b>·</b> 2026</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="detail-drawer" id="detail-drawer"><div id="drawer-content"></div></aside>
+  <div id="toast" class="toast"></div>
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>
